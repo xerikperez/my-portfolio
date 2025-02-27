@@ -136,12 +136,19 @@ const Page: React.FC = () => {
                 Erik Perez
               </h3>
             </Container>
-            <Container className="d-flex flex-column gap-5 mb-3 fs-5" style={{maxWidth:"200px"}}>
-
-              <Button>GitHub</Button>
-              <Button>LinkedIn</Button>
-              <Button>Resume</Button>
-              <Button>Contact Me</Button>
+            <Container className="d-flex flex-column gap-5 mb-3 fs-5" style={{ maxWidth: "200px" }}>
+              <Button as="a" href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </Button>
+              <Button as="a" href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </Button>
+              <Button as="a" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume
+              </Button>
+              <Button as="a" href="#contact">
+                Contact Me
+              </Button>
             </Container>
             
 
