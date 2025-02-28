@@ -27,7 +27,6 @@ const VantaBackground: React.FC = () => {
     if (typeof window !== "undefined" && backgroundRef.current) {
       // Poll until the script has attached VANTA to window
       const interval = setInterval(() => {
-        const VANTA = (window as any).VANTA;
         if (window.VANTA?.BIRDS) {
           vantaEffect.current = window.VANTA.BIRDS({
             el: backgroundRef.current,
