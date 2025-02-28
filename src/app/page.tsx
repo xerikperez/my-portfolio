@@ -10,18 +10,26 @@ import "./page.module.css";
 import Script from "next/script";
 
 
+declare global {
+  interface Window {
+    VANTA?: {
+      BIRDS: (options: object) => { destroy: () => void };
+    };
+  }
+}
+
+
 const VantaBackground: React.FC = () => {
   const backgroundRef = useRef<HTMLDivElement | null>(null);
-
-  const vantaEffect = useRef<any>(null);
+  const vantaEffect = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
-    if (!vantaEffect.current && backgroundRef.current) {
+    if (typeof window !== "undefined" && backgroundRef.current) {
       // Poll until the script has attached VANTA to window
       const interval = setInterval(() => {
         const VANTA = (window as any).VANTA;
-        if (VANTA && typeof VANTA.BIRDS === "function") {
-          vantaEffect.current = VANTA.BIRDS({
+        if (window.VANTA?.BIRDS) {
+          vantaEffect.current = window.VANTA.BIRDS({
             el: backgroundRef.current,
             mouseControls: true,
             touchControls: true,
