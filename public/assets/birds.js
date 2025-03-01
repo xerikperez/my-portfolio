@@ -710,7 +710,7 @@
     class E extends l {
       static initClass() {
         this.prototype.defaultOptions = {
-          backgroundColor: 465199,
+          backgroundColor: 0x003366,
           color1: 16711680,
           color2: 53759,
           colorMode: "varianceGradient",
