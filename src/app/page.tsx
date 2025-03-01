@@ -6,7 +6,6 @@ import { Navbar, Nav, Row, Col, Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Image from "next/image";
 import profilepic from "../../public/assets/Profile Pic.png";
-import styles from "./page.module.css";
 import Script from "next/script";
 
 
