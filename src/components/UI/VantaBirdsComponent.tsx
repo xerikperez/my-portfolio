@@ -31,7 +31,7 @@ export const VantaBackground: React.FC = () => {
             color1: "rgb(41, 77, 51)",
             color2: "rgb(49, 105, 65)",
             colorMode: "varianceGradient",
-            quantity: 6,
+            quantity: 3,
             birdSize: 2,
             wingSpan: 30,
             speedLimit: 7,

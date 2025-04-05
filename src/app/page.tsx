@@ -1,6 +1,5 @@
 "use client";
-// Import React and useEffect hook
-import React, { useEffect, useRef } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Row, Col, Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
