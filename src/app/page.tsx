@@ -7,8 +7,12 @@ import Image from "next/image";
 import profilepic from "../../public/assets/Profile Pic.png";
 import Script from "next/script";
 import { VantaBackground } from "@/components/UI/VantaBirdsComponent";
+import { DownloadBtns } from "@/components/UI/downloadBtnComponent";
+import { useEffect, useState } from "react";
 
 const Page: React.FC = () => {
+  const [isShowing, setIsShowing] = useState(false);
+
   return (
     <div style={{ position: "relative" }}>
       <Script
@@ -61,7 +65,7 @@ const Page: React.FC = () => {
               <Image src={profilepic} alt="txt" className="w-75 h-auto" />
             </Container>
           </Col>
-
+          {isShowing && <DownloadBtns />}
           <Col
             xs={12}
             md={6}
@@ -112,12 +116,15 @@ const Page: React.FC = () => {
               </Button>
               <Button
                 as="a"
-                href="/resume.pdf"
-                target="_blank"
+                href="#contact"
+                onClick={() => {
+                  setIsShowing(true);
+                }}
                 rel="noopener noreferrer"
               >
                 Resume
               </Button>
+
               <Button as="a" href="#contact">
                 Contact Me
               </Button>
