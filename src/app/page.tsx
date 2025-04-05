@@ -8,7 +8,7 @@ import profilepic from "../../public/assets/Profile Pic.png";
 import Script from "next/script";
 import { VantaBackground } from "@/components/UI/VantaBirdsComponent";
 import { DownloadBtns } from "@/components/UI/downloadBtnComponent";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Page: React.FC = () => {
   const [isShowing, setIsShowing] = useState(false);
