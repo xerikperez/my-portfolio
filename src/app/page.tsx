@@ -115,8 +115,6 @@ const Page: React.FC = () => {
                 LinkedIn
               </Button>
               <Button
-                as="a"
-                href="#contact"
                 onClick={() => {
                   setIsShowing(true);
                 }}
