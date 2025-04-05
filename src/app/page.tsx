@@ -10,9 +10,7 @@ import { VantaBackground } from "@/components/UI/VantaBirdsComponent";
 
 const Page: React.FC = () => {
   return (
-    <div
-      style={{ position: "relative", minHeight: "100vh", maxHeight: "100vh" }}
-    >
+    <div style={{ position: "relative" }}>
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
         strategy="beforeInteractive"
@@ -60,13 +58,7 @@ const Page: React.FC = () => {
             className="justify-content-start align-items-center d-flex min-vh-100"
           >
             <Container className="text-left">
-              <Image
-                src={profilepic}
-                alt="txt"
-                className="img-fluid"
-                width={500}
-                height={500}
-              />
+              <Image src={profilepic} alt="txt" className="w-75 h-auto" />
             </Container>
           </Col>
 
