@@ -65,7 +65,7 @@ const Page: React.FC = () => {
               <Image src={profilepic} alt="txt" className="w-75 h-auto" />
             </Container>
           </Col>
-          {isShowing && <DownloadBtns />}
+          {isShowing && <DownloadBtns onClose={() => setIsShowing(false)} />}
           <Col
             xs={12}
             md={6}
