@@ -137,10 +137,9 @@ const Page: React.FC = () => {
             <h2 className="text-center mb-4">About Me</h2>
             <p className="lead text-center">
               I&apos;m a software developer with a completed degree in Software
-              Development from MOLK Education. For the past three months, I&apos;ve
-              been contributing at Unitech, applying workflow pipeline
-              automation and full-stack skills to deliver efficient,
-              user-focused applications.
+              Development from MOLK Education. I currently partner with
+              UnitechUSA as a client, building data-driven tools and automating
+              supply chain workflows across LATAM.
             </p>
           </Col>
         </Row>
@@ -170,6 +169,12 @@ const Page: React.FC = () => {
               <li className="list-inline-item badge bg-success m-1">Git &amp; GitHub</li>
               <li className="list-inline-item badge bg-success m-1">Agile Collaboration</li>
             </ul>
+            <h5 className="text-center mt-4">Operational Skills</h5>
+            <ul className="list-unstyled text-center">
+              <li>Automate supply chain &amp; order tracking across LATAM vendors</li>
+              <li>Cut repetitive work by up to 80% with ExcelScripts &amp; Python Playwright bots</li>
+              <li>Clarify data with advanced Excel formulas and multilingual client emails</li>
+            </ul>
           </Col>
         </Row>
         <Row id="experience" className="pt-5">
@@ -178,11 +183,12 @@ const Page: React.FC = () => {
           </Col>
           <Col md={8} className="mx-auto">
             <div className="mb-4">
-              <h5 className="fw-bold">Unitech – Software Developer</h5>
+              <h5 className="fw-bold">UnitechUSA (Client) – Operations Support Specialist</h5>
               <p className="mb-1 text-muted">Feb 2025 – Present | Remote</p>
               <p>
-                Streamline development by automating workflow pipelines and
-                collaborating across teams to deliver reliable features.
+                Eliminated manual supply chain tracking by scripting vendor
+                checks and Excel flags, saving 80% of repetitive work and
+                keeping POs and SOs accurate across regions.
               </p>
             </div>
             <div className="mb-4">
@@ -191,29 +197,9 @@ const Page: React.FC = () => {
               </h5>
               <p className="mb-1 text-muted">Jan 2025 – May 2025 | Remote</p>
               <p>
-                Contributed to a modern SaaS recruitment platform using React,
-                TypeScript, and Bootstrap, enhancing UI responsiveness and
-                collaborating through Agile practices.
-              </p>
-            </div>
-            <div className="mb-4">
-              <h5 className="fw-bold">
-                Assurant – IT Support & Troubleshooting Specialist
-              </h5>
-              <p className="mb-1 text-muted">Sep 2024 – Jan 2025 | Houston, TX</p>
-              <p>
-                Resolved support tickets with high customer satisfaction and
-                documented internal knowledge, reducing repeat issues.
-              </p>
-            </div>
-            <div className="mb-4">
-              <h5 className="fw-bold">
-                WeTeachIT – Software Development Engineering Intern
-              </h5>
-              <p className="mb-1 text-muted">Apr 2024 – Jun 2024 | Remote</p>
-              <p>
-                Built GUI automation tools with Python and Selenium, delivering
-                secure backend components and reducing login time.
+                Solved clunky recruiter workflows by building responsive
+                React/TypeScript components for a SaaS hiring platform and
+                collaborating through Agile sprints.
               </p>
             </div>
           </Col>
