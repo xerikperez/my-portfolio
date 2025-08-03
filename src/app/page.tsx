@@ -136,9 +136,11 @@ const Page: React.FC = () => {
           <Col md={8}>
             <h2 className="text-center mb-4">About Me</h2>
             <p className="lead text-center">
-              I&apos;m a software developer pursuing a technical degree in Software
-              Development at MOLK Education. I enjoy building responsive,
-              user-focused applications and learning new technologies.
+              I&apos;m a software developer with a completed degree in Software
+              Development from MOLK Education. For the past three months, I&apos;ve
+              been contributing at Unitech, applying workflow pipeline
+              automation and full-stack skills to deliver efficient,
+              user-focused applications.
             </p>
           </Col>
         </Row>
@@ -148,6 +150,7 @@ const Page: React.FC = () => {
         <Row>
           <Col>
             <h2 className="text-center mb-4">Skills</h2>
+            <h5 className="text-center">Languages &amp; Frameworks</h5>
             <ul className="list-inline text-center">
               <li className="list-inline-item badge bg-success m-1">Java</li>
               <li className="list-inline-item badge bg-success m-1">Python</li>
@@ -160,6 +163,13 @@ const Page: React.FC = () => {
               <li className="list-inline-item badge bg-success m-1">SQL</li>
               <li className="list-inline-item badge bg-success m-1">C#</li>
             </ul>
+            <h5 className="text-center mt-4">Workflow &amp; Tools</h5>
+            <ul className="list-inline text-center">
+              <li className="list-inline-item badge bg-success m-1">Workflow Pipeline Automation</li>
+              <li className="list-inline-item badge bg-success m-1">CI/CD</li>
+              <li className="list-inline-item badge bg-success m-1">Git &amp; GitHub</li>
+              <li className="list-inline-item badge bg-success m-1">Agile Collaboration</li>
+            </ul>
           </Col>
         </Row>
         <Row id="experience" className="pt-5">
@@ -167,6 +177,14 @@ const Page: React.FC = () => {
             <h2 className="text-center mb-4">Experience</h2>
           </Col>
           <Col md={8} className="mx-auto">
+            <div className="mb-4">
+              <h5 className="fw-bold">Unitech – Software Developer</h5>
+              <p className="mb-1 text-muted">Feb 2025 – Present | Remote</p>
+              <p>
+                Streamline development by automating workflow pipelines and
+                collaborating across teams to deliver reliable features.
+              </p>
+            </div>
             <div className="mb-4">
               <h5 className="fw-bold">
                 Cruitify – Software Development Engineering Intern
