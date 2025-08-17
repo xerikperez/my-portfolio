@@ -13,9 +13,11 @@ export const VantaBackground: React.FC = () => {
   const vantaEffect = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | undefined;
+
     if (typeof window !== "undefined" && backgroundRef.current) {
       // Poll until the script has attached VANTA to window
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         if (window.VANTA?.BIRDS) {
           vantaEffect.current = window.VANTA.BIRDS({
             el: backgroundRef.current,
@@ -43,7 +45,11 @@ export const VantaBackground: React.FC = () => {
         }
       }, 100);
     }
+
     return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
       if (vantaEffect.current) {
         vantaEffect.current.destroy();
       }
