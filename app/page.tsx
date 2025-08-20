@@ -1,32 +1,57 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Script from 'next/script';
-import BirdsBackground from '@/components/BirdsBackground';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Script from "next/script";
+import BirdsBackground from "@/components/BirdsBackground";
 
 const LINKS = {
-  linkedin: 'https://www.linkedin.com/in/YOUR_LINKEDIN',
-  github: 'https://github.com/YOUR_GITHUB',
-  instagram: 'https://instagram.com/YOUR_INSTAGRAM',
-  resume: '/resume.pdf',
-  email: 'you@yourdomain.com',
-  formspreeId: 'YOUR_FORM_ID',
+  linkedin: "https://www.linkedin.com/in/YOUR_LINKEDIN",
+  github: "https://github.com/YOUR_GITHUB",
+  instagram: "https://instagram.com/YOUR_INSTAGRAM",
+  resume: "/resume.pdf",
+  email: "you@yourdomain.com",
+  formspreeId: "YOUR_FORM_ID",
 };
 
-const SectionTitle = ({ title, subtitle, center }: { title: string; subtitle?: string; center?: boolean }) => (
-  <div className={center ? 'text-center' : ''}>
-    <h2 className="font-[var(--font-orbitron)] text-2xl md:text-3xl font-semibold tracking-[0.08em] uppercase">{title}</h2>
-    {subtitle && <p className="mt-2 text-neutral-300 max-w-2xl mx-auto">{subtitle}</p>}
+const SectionTitle = ({
+  title,
+  subtitle,
+  center,
+}: {
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+}) => (
+  <div className={center ? "text-center" : ""}>
+    <h2 className="font-[var(--font-orbitron)] text-2xl md:text-3xl font-semibold tracking-[0.08em] uppercase">
+      {title}
+    </h2>
+    {subtitle && (
+      <p className="mt-2 text-neutral-300 max-w-2xl mx-auto">{subtitle}</p>
+    )}
   </div>
 );
 
-const Card = ({ children, className = '' }: React.PropsWithChildren<{ className?: string }>) => (
-  <div className={`rounded-2xl border border-white/10 bg-white/5 ${className}`}>{children}</div>
+const Card = ({
+  children,
+  className = "",
+}: React.PropsWithChildren<{ className?: string }>) => (
+  <div className={`rounded-2xl border border-white/10 bg-white/5 ${className}`}>
+    {children}
+  </div>
 );
 
-const FadeIn = ({ children, delay = 0 }: React.PropsWithChildren<{ delay?: number }>) => (
-  <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: 'easeOut', delay }}>
+const FadeIn = ({
+  children,
+  delay = 0,
+}: React.PropsWithChildren<{ delay?: number }>) => (
+  <motion.div
+    initial={{ opacity: 0, y: 18 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.65, ease: "easeOut", delay }}
+  >
     {children}
   </motion.div>
 );
@@ -38,28 +63,91 @@ export default function Page() {
 
   return (
     <div className="min-h-screen">
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" strategy="beforeInteractive" />
-      <Script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js" strategy="beforeInteractive" />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"
+        strategy="beforeInteractive"
+      />
       <BirdsBackground />
       {/* ===== Nav ===== */}
       <header className="fixed top-0 inset-x-0 z-40">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-2">
-            <a href="#home" className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]">JW<span className="text-indigo-400">.</span></a>
+            <a
+              href="#home"
+              className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]"
+            >
+              JW<span className="text-indigo-400">.</span>
+            </a>
             <div className="hidden md:flex items-center gap-2">
-              <a href="#about" className="px-3 py-1.5 rounded-xl hover:bg-white/5">About</a>
-              <a href="#work" className="px-3 py-1.5 rounded-xl hover:bg-white/5">Work</a>
-              <a href="#contact" className="px-3 py-1.5 rounded-xl hover:bg-white/5">Contact</a>
-              <button onClick={() => setQuoteOpen(true)} className="ml-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-sm font-medium">Get a Quote</button>
+              <a
+                href="#about"
+                className="px-3 py-1.5 rounded-xl hover:bg-white/5"
+              >
+                About
+              </a>
+              <a
+                href="#work"
+                className="px-3 py-1.5 rounded-xl hover:bg-white/5"
+              >
+                Work
+              </a>
+              <a
+                href="#contact"
+                className="px-3 py-1.5 rounded-xl hover:bg-white/5"
+              >
+                Contact
+              </a>
+              <button
+                onClick={() => setQuoteOpen(true)}
+                className="ml-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-sm font-medium"
+              >
+                Get a Quote
+              </button>
             </div>
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden px-3 py-2 rounded-xl hover:bg-white/5" aria-label="Open menu">☰</button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden px-3 py-2 rounded-xl hover:bg-white/5"
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
           </nav>
           {mobileOpen && (
             <div className="md:hidden mt-2 glass rounded-2xl px-4 py-3">
-              <a href="#about" className="block px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setMobileOpen(false)}>About</a>
-              <a href="#work" className="block px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setMobileOpen(false)}>Work</a>
-              <a href="#contact" className="block px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setMobileOpen(false)}>Contact</a>
-              <button onClick={() => { setMobileOpen(false); setQuoteOpen(true); }} className="mt-2 w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-sm font-medium">Get a Quote</button>
+              <a
+                href="#about"
+                className="block px-3 py-2 rounded-lg hover:bg-white/5"
+                onClick={() => setMobileOpen(false)}
+              >
+                About
+              </a>
+              <a
+                href="#work"
+                className="block px-3 py-2 rounded-lg hover:bg-white/5"
+                onClick={() => setMobileOpen(false)}
+              >
+                Work
+              </a>
+              <a
+                href="#contact"
+                className="block px-3 py-2 rounded-lg hover:bg-white/5"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
+              </a>
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  setQuoteOpen(true);
+                }}
+                className="mt-2 w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-sm font-medium"
+              >
+                Get a Quote
+              </button>
             </div>
           )}
         </div>
@@ -75,20 +163,41 @@ export default function Page() {
 
         <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
           <FadeIn>
-            <p className="text-sm tracking-[0.25em] text-neutral-400 font-[var(--font-orbitron)] uppercase">SOFTWARE • AUTOMATION • ENTREPRENEUR</p>
+            <p className="text-sm tracking-[0.25em] text-neutral-400 font-[var(--font-orbitron)] uppercase">
+              SOFTWARE • AUTOMATION • ENTREPRENEUR
+            </p>
             <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-tight font-[var(--font-orbitron)] tracking-[0.06em] uppercase">
               John Wick — Fast, Elegant, Automated.
             </h1>
-            <p className="mt-4 text-neutral-300 max-w-prose">I build clean, scalable web apps and business automations that save teams time and make products shine. Let’s ship something great.</p>
+            <p className="mt-4 text-neutral-300 max-w-prose">
+              I build clean, scalable web apps and business automations that
+              save teams time and make products shine. Let’s ship something
+              great.
+            </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={LINKS.linkedin} target="_blank" className="link-like">LinkedIn</a>
-              <a href={LINKS.github} target="_blank" className="link-like">GitHub</a>
-              <a href={LINKS.resume} target="_blank" className="link-like">Resume</a>
-              <a href={LINKS.instagram} target="_blank" className="link-like">Instagram</a>
-              <a href="#contact" className="link-like">Contact Me</a>
+              <a href={LINKS.linkedin} target="_blank" className="link-like">
+                LinkedIn
+              </a>
+              <a href={LINKS.github} target="_blank" className="link-like">
+                GitHub
+              </a>
+              <a href={LINKS.resume} target="_blank" className="link-like">
+                Resume
+              </a>
+              <a href={LINKS.instagram} target="_blank" className="link-like">
+                Instagram
+              </a>
+              <a href="#contact" className="link-like">
+                Contact Me
+              </a>
             </div>
             <div className="mt-6">
-              <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium">Get a Quote</button>
+              <button
+                onClick={() => setQuoteOpen(true)}
+                className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium"
+              >
+                Get a Quote
+              </button>
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -96,9 +205,13 @@ export default function Page() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500/30 to-fuchsia-500/30 blur-2xl -z-10" />
               <Card className="rounded-3xl p-6">
                 <div className="aspect-video rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
-                  <span className="text-neutral-400">Add a hero image or logo here</span>
+                  <span className="text-neutral-400">
+                    Add a hero image or logo here
+                  </span>
                 </div>
-                <div className="mt-4 text-sm text-neutral-400">Miami • Available for freelance & contracts</div>
+                <div className="mt-4 text-sm text-neutral-400">
+                  Miami • Available for freelance & contracts
+                </div>
               </Card>
             </div>
           </FadeIn>
@@ -110,7 +223,13 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
           <FadeIn>
             <SectionTitle title="About Me" />
-            <p className="mt-4 text-neutral-300 leading-relaxed">I’m a full‑stack developer focused on React, TypeScript, and automation (Playwright, Python). I ship fast, write maintainable code, and obsess over DX and UX. Past work includes logistics portals, workflow automation, and data tools that cut manual work by 50–80%.</p>
+            <p className="mt-4 text-neutral-300 leading-relaxed">
+              I’m a full‑stack developer focused on React, TypeScript, and
+              automation (Playwright, Python). I ship fast, write maintainable
+              code, and obsess over DX and UX. Past work includes logistics
+              portals, workflow automation, and data tools that cut manual work
+              by 50–80%.
+            </p>
             <ul className="mt-6 space-y-2 text-neutral-300">
               <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
               <li>• Backend: Node.js, Firebase, Nest.js</li>
@@ -147,13 +266,25 @@ export default function Page() {
       <section id="work" className="py-20">
         <div className="mx-auto max-w-6xl px-4">
           <FadeIn>
-            <SectionTitle title="Selected Work" subtitle="A few projects that showcase velocity, DX, and polish. Swap these with your real case studies." />
+            <SectionTitle
+              title="Selected Work"
+              subtitle="A few projects that showcase velocity, DX, and polish. Swap these with your real case studies."
+            />
           </FadeIn>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
-              { title: 'Logistics Slot Booking', desc: 'Admin + driver apps, automated scheduling, real‑time updates.' },
-              { title: 'Vendor ETA Scraper', desc: 'Playwright bot pulling ETAs, tracking numbers, and PDFs.' },
-              { title: 'Client Portal MVP', desc: 'Auth, orgs, claims, and sleek Tailwind frontend.' },
+              {
+                title: "Logistics Slot Booking",
+                desc: "Admin + driver apps, automated scheduling, real‑time updates.",
+              },
+              {
+                title: "Vendor ETA Scraper",
+                desc: "Playwright bot pulling ETAs, tracking numbers, and PDFs.",
+              },
+              {
+                title: "Client Portal MVP",
+                desc: "Auth, orgs, claims, and sleek Tailwind frontend.",
+              },
             ].map((p, i) => (
               <FadeIn key={p.title} delay={0.03 * i}>
                 <Card className="overflow-hidden">
@@ -168,7 +299,12 @@ export default function Page() {
           </div>
           <FadeIn>
             <div className="mt-8">
-              <button onClick={() => setQuoteOpen(true)} className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium">Get a Quote</button>
+              <button
+                onClick={() => setQuoteOpen(true)}
+                className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium"
+              >
+                Get a Quote
+              </button>
             </div>
           </FadeIn>
         </div>
@@ -178,33 +314,57 @@ export default function Page() {
       <section id="contact" className="py-20">
         <div className="mx-auto max-w-3xl px-4">
           <FadeIn>
-            <SectionTitle title="Contact" subtitle="Have a project in mind? Let’s talk." center />
+            <SectionTitle
+              title="Contact"
+              subtitle="Have a project in mind? Let’s talk."
+              center
+            />
           </FadeIn>
           <FadeIn>
             <form
               className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4"
-              action={LINKS.formspreeId !== 'YOUR_FORM_ID' ? `https://formspree.io/f/${LINKS.formspreeId}` : undefined}
+              action={
+                LINKS.formspreeId !== "YOUR_FORM_ID"
+                  ? `https://formspree.io/f/${LINKS.formspreeId}`
+                  : undefined
+              }
               method="POST"
               onSubmit={(e) => {
-                if (LINKS.formspreeId === 'YOUR_FORM_ID') {
+                if (LINKS.formspreeId === "YOUR_FORM_ID") {
                   e.preventDefault();
-                  alert('Set LINKS.formspreeId to enable form submission.');
+                  alert("Set LINKS.formspreeId to enable form submission.");
                 }
               }}
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-neutral-400">Name</label>
-                  <input name="name" required className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
+                  <input
+                    name="name"
+                    required
+                    className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm text-neutral-400">Email</label>
-                  <input name="email" type="email" required className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
+                  <label className="block text-sm text-neutral-400">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                  />
                 </div>
               </div>
               <div>
-                <label className="block text-sm text-neutral-400">What do you need?</label>
-                <select name="type" className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400">
+                <label className="block text-sm text-neutral-400">
+                  What do you need?
+                </label>
+                <select
+                  name="type"
+                  className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                >
                   <option>Web App</option>
                   <option>Automation / Bot</option>
                   <option>Dashboard / Data</option>
@@ -214,8 +374,13 @@ export default function Page() {
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm text-neutral-400">Budget</label>
-                  <select name="budget" className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400">
+                  <label className="block text-sm text-neutral-400">
+                    Budget
+                  </label>
+                  <select
+                    name="budget"
+                    className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                  >
                     <option>$1k – $3k</option>
                     <option>$3k – $8k</option>
                     <option>$8k – $15k</option>
@@ -223,8 +388,13 @@ export default function Page() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-neutral-400">Timeline</label>
-                  <select name="timeline" className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400">
+                  <label className="block text-sm text-neutral-400">
+                    Timeline
+                  </label>
+                  <select
+                    name="timeline"
+                    className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                  >
                     <option>1–2 weeks</option>
                     <option>2–4 weeks</option>
                     <option>1–2 months</option>
@@ -233,12 +403,29 @@ export default function Page() {
                 </div>
               </div>
               <div>
-                <label className="block text-sm text-neutral-400">Message</label>
-                <textarea name="message" rows={5} className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Tell me about your project…" />
+                <label className="block text-sm text-neutral-400">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  className="mt-1 w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                  placeholder="Tell me about your project…"
+                />
               </div>
               <div className="flex flex-wrap gap-3 items-center justify-between">
-                <button className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium" type="submit">Send Message</button>
-                <a href={`mailto:${LINKS.email}`} className="text-sm text-neutral-400 hover:text-neutral-200">or email {LINKS.email}</a>
+                <button
+                  className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-5 py-3 font-medium"
+                  type="submit"
+                >
+                  Send Message
+                </button>
+                <a
+                  href={`mailto:${LINKS.email}`}
+                  className="text-sm text-neutral-400 hover:text-neutral-200"
+                >
+                  or email {LINKS.email}
+                </a>
               </div>
             </form>
           </FadeIn>
@@ -250,10 +437,34 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-neutral-400">
           <div>© {year} John Wick. All rights reserved.</div>
           <div className="flex items-center gap-4">
-            <a href={LINKS.linkedin} target="_blank" className="hover:text-neutral-200">LinkedIn</a>
-            <a href={LINKS.github} target="_blank" className="hover:text-neutral-200">GitHub</a>
-            <a href={LINKS.resume} target="_blank" className="hover:text-neutral-200">Resume</a>
-            <a href={LINKS.instagram} target="_blank" className="hover:text-neutral-200">Instagram</a>
+            <a
+              href={LINKS.linkedin}
+              target="_blank"
+              className="hover:text-neutral-200"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={LINKS.github}
+              target="_blank"
+              className="hover:text-neutral-200"
+            >
+              GitHub
+            </a>
+            <a
+              href={LINKS.resume}
+              target="_blank"
+              className="hover:text-neutral-200"
+            >
+              Resume
+            </a>
+            <a
+              href={LINKS.instagram}
+              target="_blank"
+              className="hover:text-neutral-200"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </footer>
@@ -261,33 +472,76 @@ export default function Page() {
       {/* ===== Quote Modal ===== */}
       {quoteOpen && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
-          <div className="absolute inset-0 bg-black/60" onClick={() => setQuoteOpen(false)} />
+          <div
+            className="absolute inset-0 bg-black/60"
+            onClick={() => setQuoteOpen(false)}
+          />
           <Card className="relative w-full sm:max-w-lg mx-4 sm:mx-0 p-6 backdrop-blur-lg">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-medium">Get a Quote</h3>
-              <button onClick={() => setQuoteOpen(false)} className="rounded-lg px-2 py-1 hover:bg-white/5">✕</button>
+              <button
+                onClick={() => setQuoteOpen(false)}
+                className="rounded-lg px-2 py-1 hover:bg-white/5"
+              >
+                ✕
+              </button>
             </div>
             <form
               className="mt-4 space-y-3"
-              action={LINKS.formspreeId !== 'YOUR_FORM_ID' ? `https://formspree.io/f/${LINKS.formspreeId}` : undefined}
+              action={
+                LINKS.formspreeId !== "YOUR_FORM_ID"
+                  ? `https://formspree.io/f/${LINKS.formspreeId}`
+                  : undefined
+              }
               method="POST"
               onSubmit={(e) => {
-                if (LINKS.formspreeId === 'YOUR_FORM_ID') {
+                if (LINKS.formspreeId === "YOUR_FORM_ID") {
                   e.preventDefault();
-                  alert('Set LINKS.formspreeId to enable form submission.');
+                  alert("Set LINKS.formspreeId to enable form submission.");
                 }
               }}
             >
               <input type="hidden" name="source" value="Quote Modal" />
               <div className="grid sm:grid-cols-2 gap-3">
-                <input name="name" placeholder="Name" required className="rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
-                <input name="email" type="email" placeholder="Email" required className="rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
+                <input
+                  name="name"
+                  placeholder="Name"
+                  required
+                  className="rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                  className="rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+                />
               </div>
-              <input name="project" placeholder="Project type (e.g., React app, automation)" className="w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
-              <textarea name="details" rows={4} placeholder="Briefly describe goals, features, deadlines" className="w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400" />
+              <input
+                name="project"
+                placeholder="Project type (e.g., React app, automation)"
+                className="w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+              />
+              <textarea
+                name="details"
+                rows={4}
+                placeholder="Briefly describe goals, features, deadlines"
+                className="w-full rounded-xl bg-white/5 px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-400"
+              />
               <div className="flex justify-end gap-2 pt-2">
-                <button type="button" onClick={() => setQuoteOpen(false)} className="rounded-xl px-4 py-2 hover:bg-white/5">Cancel</button>
-                <button type="submit" className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 font-medium">Request Quote</button>
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(false)}
+                  className="rounded-xl px-4 py-2 hover:bg-white/5"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 font-medium"
+                >
+                  Request Quote
+                </button>
               </div>
             </form>
           </Card>
