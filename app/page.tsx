@@ -6,8 +6,8 @@ import Script from "next/script";
 import BirdsBackground from "@/components/BirdsBackground";
 
 const LINKS = {
-  linkedin: "https://www.linkedin.com/in/YOUR_LINKEDIN",
-  github: "https://github.com/YOUR_GITHUB",
+  linkedin: "https://www.linkedin.com/in/erik-pérez",
+  github: "https://github.com/xerikperez",
   instagram: "https://instagram.com/YOUR_INSTAGRAM",
   resume: "/resume.pdf",
   email: "you@yourdomain.com",
@@ -80,7 +80,7 @@ export default function Page() {
               href="#home"
               className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]"
             >
-              JW<span className="text-indigo-400">.</span>
+              EP<span className="text-indigo-400">.</span>
             </a>
             <div className="hidden md:flex items-center gap-2">
               <a
@@ -167,7 +167,7 @@ export default function Page() {
               SOFTWARE • AUTOMATION • ENTREPRENEUR
             </p>
             <h1 className="mt-3 text-4xl sm:text-5xl font-semibold leading-tight font-[var(--font-orbitron)] tracking-[0.06em] uppercase">
-              John Wick — Fast, Elegant, Automated.
+              corevision — Fast, Elegant, Automated.
             </h1>
             <p className="mt-4 text-neutral-300 max-w-prose">
               I build clean, scalable web apps and business automations that
@@ -205,9 +205,7 @@ export default function Page() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500/30 to-fuchsia-500/30 blur-2xl -z-10" />
               <Card className="rounded-3xl p-6">
                 <div className="aspect-video rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
-                  <span className="text-neutral-400">
-                    Add a hero image or logo here
-                  </span>
+                  <span className="text-neutral-400"></span>
                 </div>
                 <div className="mt-4 text-sm text-neutral-400">
                   Miami • Available for freelance & contracts
