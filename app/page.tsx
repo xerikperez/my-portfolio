@@ -266,7 +266,7 @@ export default function Page() {
           <FadeIn>
             <SectionTitle
               title="Selected Work"
-              subtitle="A few projects that showcase velocity, DX, and polish. Swap these with your real case studies."
+              subtitle="A few projects that showcase velocity, DX, and polish."
             />
           </FadeIn>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
