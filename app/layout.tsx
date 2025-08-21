@@ -1,15 +1,16 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Orbitron, Inter } from 'next/font/google';
+import type { Metadata } from "next";
+import "./globals.css";
+import { Orbitron, Inter } from "next/font/google";
 
 // Free, Tesla‑adjacent display font for headings
-const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' });
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" });
 // Body font fallback
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'John Wick – Portfolio',
-  description: 'Elegant one‑page portfolio with Tesla‑style vibe, animations, and contact.',
+  title: "CoreVisionEP – HomePage",
+  description:
+    "Welcome to CoreVisionEP, where we build fast, elegant, and automated web solutions.",
 };
 
 // (Optional Local Font) — if you own a licensed Tesla‑style font file
@@ -19,10 +20,16 @@ export const metadata: Metadata = {
 //   variable: '--font-orbitron',
 // });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} ${inter.variable} font-sans`}>{children}</body>
+      <body className={`${orbitron.variable} ${inter.variable} font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }
