@@ -207,9 +207,8 @@ export default function Page() {
                   <div className="aspect-video rounded-2xl overflow-hidden">
                     <iframe
                       title="Miami Downtown Map"
-                      src="https://maps.apple.com/?ll=25.761681,-80.191788&z=15&t=m&output=embed"
+                      src="https://www.openstreetmap.org/export/embed.html?bbox=-80.2017,25.7471,-80.1769,25.7780&layer=mapnik&marker=25.7617,-80.1918"
                       className="w-full h-full border-0"
-                      allowFullScreen
                       loading="lazy"
                     />
                   </div>
