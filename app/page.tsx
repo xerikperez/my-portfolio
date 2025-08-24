@@ -80,7 +80,7 @@ export default function Page() {
               href="#home"
               className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]"
             >
-              EP<span className="text-indigo-400">.</span>
+              EP<span className="text-indigo-400"></span>
             </a>
             <div className="hidden md:flex items-center gap-2">
               <a
@@ -203,19 +203,19 @@ export default function Page() {
           <FadeIn delay={0.1}>
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500/30 to-fuchsia-500/30 blur-2xl -z-10" />
-                <Card className="rounded-3xl p-6">
-                  <div className="aspect-video rounded-2xl overflow-hidden">
-                    <iframe
-                      title="Miami Downtown Map"
-                      src="https://www.openstreetmap.org/export/embed.html?bbox=-80.2017,25.7471,-80.1769,25.7780&layer=mapnik&marker=25.7617,-80.1918"
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="mt-4 text-sm text-neutral-400">
-                    Miami • Available for freelance & contracts
-                  </div>
-                </Card>
+              <Card className="rounded-3xl p-6">
+                <div className="aspect-video rounded-2xl overflow-hidden">
+                  <iframe
+                    title="Miami Downtown Map"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-80.2017,25.7471,-80.1769,25.7780&layer=mapnik&marker=25.7617,-80.1918"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-4 text-sm text-neutral-400">
+                  Miami • Available for freelance & contracts
+                </div>
+              </Card>
             </div>
           </FadeIn>
         </div>
@@ -226,19 +226,21 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
           <FadeIn>
             <SectionTitle title="About Me" />
-              <p className="mt-4 text-neutral-300 leading-relaxed">
-                I’m a Miami‑based full‑stack engineer building modern web apps
-                and automation systems. My recent work spans logistics
-                dashboards, internal tooling, and AI‑assisted workflows that cut
-                manual steps by 50–80%. I care about clean code, fast delivery,
-                and delightful UX.
-              </p>
-              <ul className="mt-6 space-y-2 text-neutral-300">
-                <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
-                <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
-                <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
-                <li>• Automation: Playwright, Python, Excel scripting, AI APIs</li>
-              </ul>
+            <p className="mt-4 text-neutral-300 leading-relaxed">
+              I’m a Miami‑based full‑stack engineer building modern web apps and
+              automation systems. My recent work spans logistics dashboards,
+              internal tooling, and AI‑assisted workflows that cut manual steps
+              by 50–80%. I care about clean code, fast delivery, and delightful
+              UX.
+            </p>
+            <ul className="mt-6 space-y-2 text-neutral-300">
+              <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
+              <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
+              <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
+              <li>
+                • Automation: Playwright, Python, Excel scripting, AI APIs
+              </li>
+            </ul>
           </FadeIn>
           <FadeIn delay={0.05}>
             <Card className="rounded-3xl p-6">
