@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Script from "next/script";
+import Image from "next/image";
 import BirdsBackground from "@/components/BirdsBackground";
 
 const LINKS = {
@@ -76,11 +77,14 @@ export default function Page() {
       <header className="fixed top-0 inset-x-0 z-40">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-2">
-            <a
-              href="#home"
-              className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]"
-            >
-              EP<span className="text-indigo-400"></span>
+            <a href="#home" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="CoreVision logo"
+                width={32}
+                height={32}
+                priority
+              />
             </a>
             <div className="hidden md:flex items-center gap-2">
               <a
