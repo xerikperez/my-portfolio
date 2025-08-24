@@ -203,14 +203,20 @@ export default function Page() {
           <FadeIn delay={0.1}>
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500/30 to-fuchsia-500/30 blur-2xl -z-10" />
-              <Card className="rounded-3xl p-6">
-                <div className="aspect-video rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
-                  <span className="text-neutral-400"></span>
-                </div>
-                <div className="mt-4 text-sm text-neutral-400">
-                  Miami • Available for freelance & contracts
-                </div>
-              </Card>
+                <Card className="rounded-3xl p-6">
+                  <div className="aspect-video rounded-2xl overflow-hidden">
+                    <iframe
+                      title="Miami Downtown Map"
+                      src="https://maps.apple.com/?ll=25.761681,-80.191788&z=15&t=m&output=embed"
+                      className="w-full h-full border-0"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="mt-4 text-sm text-neutral-400">
+                    Miami • Available for freelance & contracts
+                  </div>
+                </Card>
             </div>
           </FadeIn>
         </div>
@@ -221,18 +227,19 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
           <FadeIn>
             <SectionTitle title="About Me" />
-            <p className="mt-4 text-neutral-300 leading-relaxed">
-              I’m a full‑stack developer focused on React, TypeScript, and
-              automation (Playwright, Python). I ship fast, write maintainable
-              code, and obsess over DX and UX. Past work includes logistics
-              portals, workflow automation, and data tools that cut manual work
-              by 50–80%.
-            </p>
-            <ul className="mt-6 space-y-2 text-neutral-300">
-              <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
-              <li>• Backend: Node.js, Firebase, Nest.js</li>
-              <li>• Automation: Playwright, Python, Excel scripting</li>
-            </ul>
+              <p className="mt-4 text-neutral-300 leading-relaxed">
+                I’m a Miami‑based full‑stack engineer building modern web apps
+                and automation systems. My recent work spans logistics
+                dashboards, internal tooling, and AI‑assisted workflows that cut
+                manual steps by 50–80%. I care about clean code, fast delivery,
+                and delightful UX.
+              </p>
+              <ul className="mt-6 space-y-2 text-neutral-300">
+                <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
+                <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
+                <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
+                <li>• Automation: Playwright, Python, Excel scripting, AI APIs</li>
+              </ul>
           </FadeIn>
           <FadeIn delay={0.05}>
             <Card className="rounded-3xl p-6">
