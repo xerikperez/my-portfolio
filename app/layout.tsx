@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "CoreVisionEP – HomePage",
   description:
     "Welcome to CoreVisionEP, where we build fast, elegant, and automated web solutions.",
+  icons: "/logo.png",
 };
 
 // (Optional Local Font) — if you own a licensed Tesla‑style font file

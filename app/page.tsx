@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Script from "next/script";
+import Image from "next/image";
 import BirdsBackground from "@/components/BirdsBackground";
 
 const LINKS = {
@@ -76,11 +77,14 @@ export default function Page() {
       <header className="fixed top-0 inset-x-0 z-40">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-2">
-            <a
-              href="#home"
-              className="font-semibold tracking-tight text-neutral-100 font-[var(--font-orbitron)] uppercase tracking-[0.12em]"
-            >
-              EP<span className="text-indigo-400">.</span>
+            <a href="#home" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="CoreVision logo"
+                width={32}
+                height={32}
+                priority
+              />
             </a>
             <div className="hidden md:flex items-center gap-2">
               <a
@@ -204,8 +208,13 @@ export default function Page() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500/30 to-fuchsia-500/30 blur-2xl -z-10" />
               <Card className="rounded-3xl p-6">
-                <div className="aspect-video rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
-                  <span className="text-neutral-400"></span>
+                <div className="aspect-video rounded-2xl overflow-hidden">
+                  <iframe
+                    title="Miami Downtown Map"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-80.2017,25.7471,-80.1769,25.7780&layer=mapnik&marker=25.7617,-80.1918"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="mt-4 text-sm text-neutral-400">
                   Miami • Available for freelance & contracts
@@ -222,16 +231,19 @@ export default function Page() {
           <FadeIn>
             <SectionTitle title="About Me" />
             <p className="mt-4 text-neutral-300 leading-relaxed">
-              I’m a full‑stack developer focused on React, TypeScript, and
-              automation (Playwright, Python). I ship fast, write maintainable
-              code, and obsess over DX and UX. Past work includes logistics
-              portals, workflow automation, and data tools that cut manual work
-              by 50–80%.
+              I’m a Miami‑based full‑stack engineer building modern web apps and
+              automation systems. My recent work spans logistics dashboards,
+              internal tooling, and AI‑assisted workflows that cut manual steps
+              by 50–80%. I care about clean code, fast delivery, and delightful
+              UX.
             </p>
             <ul className="mt-6 space-y-2 text-neutral-300">
               <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
-              <li>• Backend: Node.js, Firebase, Nest.js</li>
-              <li>• Automation: Playwright, Python, Excel scripting</li>
+              <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
+              <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
+              <li>
+                • Automation: Playwright, Python, Excel scripting, AI APIs
+              </li>
             </ul>
           </FadeIn>
           <FadeIn delay={0.05}>
