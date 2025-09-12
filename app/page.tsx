@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Script from "next/script";
 import Image from "next/image";
-import BirdsBackground from "@/components/BirdsBackground";
+import CircuitBackground from "@/components/CircuitBackground";
 
 const LINKS = {
   linkedin: "https://www.linkedin.com/in/erik-pérez",
@@ -64,15 +63,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen">
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"
-        strategy="beforeInteractive"
-      />
-      <BirdsBackground />
+      <CircuitBackground />
       {/* ===== Nav ===== */}
       <header className="fixed top-0 inset-x-0 z-40">
         <div className="mx-auto max-w-6xl px-4">
