@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import CircuitBackground from "@/components/CircuitBackground";
 
 const LINKS = {
@@ -60,6 +61,23 @@ export default function Page() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const year = new Date().getFullYear();
+  const projects = [
+    {
+      title: "Portfolio Website",
+      desc: "Responsive Next.js site showcasing developer profile.",
+      href: "/projects/portfolio-website",
+    },
+    {
+      title: "E‑commerce Storefront",
+      desc: "Product listings, cart interactions, and checkout flow.",
+      href: "/projects/ecommerce-storefront",
+    },
+    {
+      title: "SaaS Dashboard",
+      desc: "Interactive charts, authentication, and responsive layout.",
+      href: "/projects/saas-dashboard",
+    },
+  ] as const;
 
   return (
     <div className="min-h-screen">
@@ -270,28 +288,17 @@ export default function Page() {
             />
           </FadeIn>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Portfolio Website",
-                desc: "Responsive Next.js site showcasing developer profile.",
-              },
-              {
-                title: "E‑commerce Storefront",
-                desc: "Product listings, cart interactions, and checkout flow.",
-              },
-              {
-                title: "SaaS Dashboard",
-                desc: "Interactive charts, authentication, and responsive layout.",
-              },
-            ].map((p, i) => (
+            {projects.map((p, i) => (
               <FadeIn key={p.title} delay={0.03 * i}>
-                <Card className="overflow-hidden">
-                  <div className="aspect-video bg-neutral-900" />
-                  <div className="p-4">
-                    <h3 className="font-medium">{p.title}</h3>
-                    <p className="mt-1 text-sm text-neutral-400">{p.desc}</p>
-                  </div>
-                </Card>
+                <Link href={p.href} className="block">
+                  <Card className="overflow-hidden">
+                    <div className="aspect-video bg-neutral-900" />
+                    <div className="p-4">
+                      <h3 className="font-medium">{p.title}</h3>
+                      <p className="mt-1 text-sm text-neutral-400">{p.desc}</p>
+                    </div>
+                  </Card>
+                </Link>
               </FadeIn>
             ))}
           </div>
