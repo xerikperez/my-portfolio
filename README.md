@@ -27,7 +27,7 @@
 
 ## About The Project
 
-This portfolio serves as a personal brand hub where recruiters and clients can explore my projects, skills, and journey.
+This portfolio serves as a personal brand hub where recruiters and clients can explore my projects, skills, and journey. It now showcases website and web application projects to highlight my focus on web development.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
