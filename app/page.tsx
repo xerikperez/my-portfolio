@@ -274,24 +274,34 @@ export default function Page() {
               {
                 title: "Portfolio Website",
                 desc: "Responsive Next.js site showcasing developer profile.",
+                url: "https://example.com/portfolio",
               },
               {
                 title: "E‑commerce Storefront",
                 desc: "Product listings, cart interactions, and checkout flow.",
+                url: "https://example.com/storefront",
               },
               {
                 title: "SaaS Dashboard",
                 desc: "Interactive charts, authentication, and responsive layout.",
+                url: "https://example.com/dashboard",
               },
             ].map((p, i) => (
               <FadeIn key={p.title} delay={0.03 * i}>
-                <Card className="overflow-hidden">
-                  <div className="aspect-video bg-neutral-900" />
-                  <div className="p-4">
-                    <h3 className="font-medium">{p.title}</h3>
-                    <p className="mt-1 text-sm text-neutral-400">{p.desc}</p>
-                  </div>
-                </Card>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="overflow-hidden">
+                    <div className="aspect-video bg-neutral-900" />
+                    <div className="p-4">
+                      <h3 className="font-medium">{p.title}</h3>
+                      <p className="mt-1 text-sm text-neutral-400">{p.desc}</p>
+                    </div>
+                  </Card>
+                </a>
               </FadeIn>
             ))}
           </div>
