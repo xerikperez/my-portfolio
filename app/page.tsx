@@ -222,19 +222,16 @@ export default function Page() {
           <FadeIn>
             <SectionTitle title="About Me" />
             <p className="mt-4 text-neutral-300 leading-relaxed">
-              I’m a Miami‑based full‑stack engineer building modern web apps and
-              automation systems. My recent work spans logistics dashboards,
-              internal tooling, and AI‑assisted workflows that cut manual steps
-              by 50–80%. I care about clean code, fast delivery, and delightful
-              UX.
+              I’m a Miami‑based full‑stack engineer crafting responsive websites
+              and web applications. Lately I’ve been building projects that
+              highlight modern design and great UX. I care about clean code,
+              fast delivery, and delightful experiences.
             </p>
             <ul className="mt-6 space-y-2 text-neutral-300">
               <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
               <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
               <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
-              <li>
-                • Automation: Playwright, Python, Excel scripting, AI APIs
-              </li>
+              <li>• Design & Prototyping: Figma, responsive layouts, animations</li>
             </ul>
           </FadeIn>
           <FadeIn delay={0.05}>
@@ -275,16 +272,16 @@ export default function Page() {
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Logistics Slot Booking",
-                desc: "Admin + driver apps, automated scheduling, real‑time updates.",
+                title: "Portfolio Website",
+                desc: "Responsive Next.js site showcasing developer profile.",
               },
               {
-                title: "Vendor ETA Scraper",
-                desc: "Playwright bot pulling ETAs, tracking numbers, and PDFs.",
+                title: "E‑commerce Storefront",
+                desc: "Product listings, cart interactions, and checkout flow.",
               },
               {
-                title: "Client Portal MVP",
-                desc: "Auth, orgs, claims, and sleek Tailwind frontend.",
+                title: "SaaS Dashboard",
+                desc: "Interactive charts, authentication, and responsive layout.",
               },
             ].map((p, i) => (
               <FadeIn key={p.title} delay={0.03 * i}>
