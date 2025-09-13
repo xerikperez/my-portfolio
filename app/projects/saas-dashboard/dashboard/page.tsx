@@ -3,17 +3,29 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const DATA = {
-  visitors: [120, 90, 150, 170, 130, 160, 180],
-  revenue: [80, 100, 90, 120, 95, 130, 110],
+const STATS = {
+  clients: [5, 7, 6, 8, 9, 11, 10],
+  jobs: [3, 4, 5, 6, 5, 7, 8],
 };
 
 export default function DashboardDemo() {
-  const [metric, setMetric] = useState<'visitors' | 'revenue'>('visitors');
-  const data = DATA[metric];
+  const [metric, setMetric] = useState<'clients' | 'jobs'>('clients');
+  const data = STATS[metric];
+  const [bookings, setBookings] = useState<{ name: string; date: string }[]>([]);
   const height = 200;
   const barWidth = 40;
   const gap = 20;
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const date = formData.get('date') as string;
+    if (name && date) {
+      setBookings([...bookings, { name, date }]);
+      e.currentTarget.reset();
+    }
+  }
 
   return (
     <main className="min-h-screen bg-neutral-900 text-white">
@@ -29,20 +41,20 @@ export default function DashboardDemo() {
       <section className="max-w-6xl mx-auto p-4">
         <div className="flex gap-4 mb-6">
           <button
-            onClick={() => setMetric('visitors')}
+            onClick={() => setMetric('clients')}
             className={`px-4 py-2 text-sm rounded-lg border border-white/5 ${
-              metric === 'visitors' ? 'bg-indigo-500' : 'bg-neutral-800 hover:bg-neutral-700'
+              metric === 'clients' ? 'bg-indigo-500' : 'bg-neutral-800 hover:bg-neutral-700'
             }`}
           >
-            Visitors
+            Clients
           </button>
           <button
-            onClick={() => setMetric('revenue')}
+            onClick={() => setMetric('jobs')}
             className={`px-4 py-2 text-sm rounded-lg border border-white/5 ${
-              metric === 'revenue' ? 'bg-indigo-500' : 'bg-neutral-800 hover:bg-neutral-700'
+              metric === 'jobs' ? 'bg-indigo-500' : 'bg-neutral-800 hover:bg-neutral-700'
             }`}
           >
-            Revenue
+            Jobs
           </button>
         </div>
 
@@ -54,28 +66,69 @@ export default function DashboardDemo() {
             <rect
               key={i}
               x={gap + i * (barWidth + gap)}
-              y={height - v}
+              y={height - v * 10}
               width={barWidth}
-              height={v}
+              height={v * 10}
               className="fill-indigo-400"
             />
           ))}
         </svg>
       </section>
 
+      <section className="max-w-6xl mx-auto p-4 mt-10">
+        <h2 className="text-lg font-semibold mb-4">Book a Cleaning</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+          <input
+            name="name"
+            placeholder="Client name"
+            className="flex-1 px-3 py-2 rounded-lg bg-neutral-800 border border-white/5"
+            required
+          />
+          <input
+            type="date"
+            name="date"
+            className="px-3 py-2 rounded-lg bg-neutral-800 border border-white/5 flex-1 sm:flex-none"
+            required
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 rounded-lg bg-indigo-500 text-sm hover:bg-indigo-400"
+          >
+            Add
+          </button>
+        </form>
+        <ul className="mt-4 space-y-1 text-sm">
+          {bookings.map((b, i) => (
+            <li
+              key={i}
+              className="flex justify-between bg-neutral-800 rounded-lg px-3 py-2"
+            >
+              <span>{b.name}</span>
+              <span>{b.date}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="bg-neutral-800 py-10 px-4 mt-10">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">Users</h3>
-            <p className="text-neutral-400 text-sm">Monitor daily active users.</p>
+            <h3 className="font-semibold text-lg">Clients</h3>
+            <p className="text-neutral-400 text-sm">
+              Monitor growth of your client base.
+            </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">Revenue</h3>
-            <p className="text-neutral-400 text-sm">Track subscription income.</p>
+            <h3 className="font-semibold text-lg">Bookings</h3>
+            <p className="text-neutral-400 text-sm">
+              Track scheduled cleanings at a glance.
+            </p>
           </div>
           <div className="space-y-2">
             <h3 className="font-semibold text-lg">Performance</h3>
-            <p className="text-neutral-400 text-sm">Keep latency low worldwide.</p>
+            <p className="text-neutral-400 text-sm">
+              Keep teams efficient and on time.
+            </p>
           </div>
         </div>
       </section>

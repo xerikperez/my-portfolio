@@ -80,8 +80,8 @@ export default function Page() {
       Mockup: EcommerceMockup,
     },
     {
-      title: "SaaS Dashboard",
-      desc: "Interactive charts, authentication, and responsive layout.",
+      title: "Cleaning Service Dashboard",
+      desc: "Client statistics and booking system for a cleaning company.",
       href: "/projects/saas-dashboard",
       Mockup: SaasMockup,
     },

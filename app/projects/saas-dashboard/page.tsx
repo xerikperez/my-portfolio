@@ -6,16 +6,16 @@ export default function Page() {
     <main className="min-h-screen bg-neutral-900 text-white">
       <header className="border-b border-white/5">
         <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="font-bold text-xl">SaaS Dashboard</h1>
+          <h1 className="font-bold text-xl">Cleaning Service Dashboard</h1>
           <Link href="/" className="text-sm text-indigo-400 hover:underline">
             ← Back home
           </Link>
         </div>
       </header>
       <section className="text-center py-20 px-4">
-        <h2 className="text-4xl font-bold">Insightful Analytics</h2>
+        <h2 className="text-4xl font-bold">Manage Your Cleaning Business</h2>
         <p className="mt-4 text-neutral-300">
-          Interactive charts, user authentication, and responsive layout.
+          Track client statistics and handle bookings in one place.
         </p>
         <div className="mt-8 mx-auto max-w-4xl aspect-video">
           <SaasMockup className="w-full h-full rounded-xl" />
@@ -32,15 +32,15 @@ export default function Page() {
       <section className="bg-neutral-800 py-16 px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">Charts</h3>
+            <h3 className="font-semibold text-lg">Client Stats</h3>
             <p className="text-neutral-400 text-sm">
-              Visualize data with dynamic and interactive graphs.
+              Visualize active clients and completed jobs.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">Accounts</h3>
+            <h3 className="font-semibold text-lg">Bookings</h3>
             <p className="text-neutral-400 text-sm">
-              Secure authentication and role‑based access.
+              Accept and manage cleaning appointments.
             </p>
           </div>
           <div className="space-y-2">
