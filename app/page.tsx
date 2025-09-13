@@ -16,7 +16,7 @@ const LINKS = {
   github: "https://github.com/xerikperez",
   instagram: "https://instagram.com/YOUR_INSTAGRAM",
   resume: "/resume.pdf",
-  email: "you@yourdomain.com",
+  email: "xerikperez@gmail.com",
   formspreeId: "YOUR_FORM_ID",
 };
 
@@ -257,7 +257,9 @@ export default function Page() {
               <li>• Frontend: React, Next.js, TypeScript, Tailwind/MUI</li>
               <li>• Backend: Node.js, Firebase, Nest.js, PostgreSQL</li>
               <li>• Cloud/DevOps: AWS, Docker, CI/CD</li>
-              <li>• Design & Prototyping: Figma, responsive layouts, animations</li>
+              <li>
+                • Design & Prototyping: Figma, responsive layouts, animations
+              </li>
             </ul>
           </FadeIn>
           <FadeIn delay={0.05}>
