@@ -14,7 +14,7 @@ import {
 const LINKS = {
   linkedin: "https://www.linkedin.com/in/erik-pérez",
   github: "https://github.com/xerikperez",
-  instagram: "https://instagram.com/YOUR_INSTAGRAM",
+  instagram: "https://instagram.com/erikperezxz",
   resume: "/resume.pdf",
   email: "xerikperez@gmail.com",
   formspreeId: "mblabbrw", // get your own free ID at https://formspree.io/
