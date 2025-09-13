@@ -17,7 +17,7 @@ const LINKS = {
   instagram: "https://instagram.com/YOUR_INSTAGRAM",
   resume: "/resume.pdf",
   email: "xerikperez@gmail.com",
-  formspreeId: "YOUR_FORM_ID",
+  formspreeId: "mblabbrw", // get your own free ID at https://formspree.io/
 };
 
 const SectionTitle = ({
