@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PortfolioMockup } from "@/components/ProjectMockups";
 
 export default function Page() {
   return (
@@ -16,6 +17,9 @@ export default function Page() {
         <p className="mt-4 text-neutral-300">
           Showcase skills and projects with a clean, responsive design.
         </p>
+        <div className="mt-8 mx-auto max-w-4xl aspect-video">
+          <PortfolioMockup className="w-full h-full rounded-xl" />
+        </div>
       </section>
       <section className="bg-neutral-800 py-16 px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">

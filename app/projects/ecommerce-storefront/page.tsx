@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EcommerceMockup } from "@/components/ProjectMockups";
 
 export default function Page() {
   return (
@@ -16,6 +17,17 @@ export default function Page() {
         <p className="mt-4 text-neutral-300">
           Product listings, cart interactions, and smooth checkout flow.
         </p>
+        <div className="mt-8 mx-auto max-w-4xl aspect-video">
+          <EcommerceMockup className="w-full h-full rounded-xl" />
+        </div>
+        <div className="mt-8">
+          <Link
+            href="/projects/ecommerce-storefront/store"
+            className="inline-block bg-indigo-500 hover:bg-indigo-400 px-6 py-2 rounded-xl text-sm font-medium"
+          >
+            Launch Demo Store
+          </Link>
+        </div>
       </section>
       <section className="bg-neutral-800 py-16 px-4">
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">

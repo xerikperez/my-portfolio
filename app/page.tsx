@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import CircuitBackground from "@/components/CircuitBackground";
+import {
+  PortfolioMockup,
+  EcommerceMockup,
+  SaasMockup,
+} from "@/components/ProjectMockups";
 
 const LINKS = {
   linkedin: "https://www.linkedin.com/in/erik-pérez",
@@ -66,16 +71,19 @@ export default function Page() {
       title: "Portfolio Website",
       desc: "Responsive Next.js site showcasing developer profile.",
       href: "/projects/portfolio-website",
+      Mockup: PortfolioMockup,
     },
     {
       title: "E‑commerce Storefront",
       desc: "Product listings, cart interactions, and checkout flow.",
       href: "/projects/ecommerce-storefront",
+      Mockup: EcommerceMockup,
     },
     {
-      title: "SaaS Dashboard",
-      desc: "Interactive charts, authentication, and responsive layout.",
+      title: "Cleaning Service Dashboard",
+      desc: "Client statistics and booking system for a cleaning company.",
       href: "/projects/saas-dashboard",
+      Mockup: SaasMockup,
     },
   ] as const;
 
@@ -292,7 +300,9 @@ export default function Page() {
               <FadeIn key={p.title} delay={0.03 * i}>
                 <Link href={p.href} className="block">
                   <Card className="overflow-hidden">
-                    <div className="aspect-video bg-neutral-900" />
+                    <div className="aspect-video">
+                      <p.Mockup className="w-full h-full object-cover" />
+                    </div>
                     <div className="p-4">
                       <h3 className="font-medium">{p.title}</h3>
                       <p className="mt-1 text-sm text-neutral-400">{p.desc}</p>
