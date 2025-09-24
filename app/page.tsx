@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import CircuitBackground from "@/components/CircuitBackground";
+import Logo from "@/components/Logo";
 import {
   PortfolioMockup,
   EcommerceMockup,
@@ -94,13 +94,12 @@ export default function Page() {
       <header className="fixed top-0 inset-x-0 z-40">
         <div className="mx-auto max-w-6xl px-4">
           <nav className="mt-4 flex items-center justify-between rounded-2xl glass px-4 py-2">
-            <a href="#home" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="CoreVision logo"
-                width={32}
-                height={32}
-                priority
+            <a href="#home" className="flex items-center" aria-label="CoreVision home">
+              <Logo
+                className="select-none"
+                glyphClassName="h-9 w-9 sm:h-10 sm:w-10"
+                wordmarkClassName="hidden sm:block"
+                withWordmark
               />
             </a>
             <div className="hidden md:flex items-center gap-2">

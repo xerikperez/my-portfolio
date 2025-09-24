@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/xerikperez/my-portfolio">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.svg" alt="CoreVision logo" width="80" height="80">
   </a>
 
 <h3 align="center">Portfolio Website</h3>
